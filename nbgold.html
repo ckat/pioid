@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=2">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Piano ID</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+</head>
+
+<body style="padding: 40px;">
+    <script>
+    var AID = "94RhFeY7mI";
+    tp = window['tp'] || [];
+    tp.push(['setAid', AID]);
+    tp.push(['setDebug', 'false']);
+    tp.push(['setTrackPageView', 'false']);
+
+    tp.push(['setUsePianoIdUserProvider', 'true']);
+
+    tp.push(['setEndpoint', 'https://sandbox.tinypass.com/api/v3']);
+
+    tp.push(['setCustomPreCheck', function() {
+        console.log('some lenghty checks');
+        return true;
+    }]);
+
+
+    tp.push(['init', function() {
+
+        tp.pianoId.init({
+            aid: AID,
+             iframeUrl: 'https://pmauth-sandbox.nbcsports.com',
+            displayMode: 'modal',
+            containerSelector: '#login_form',
+            loggedIn: function(user) {
+                console.log('# logged in', user);
+                document.getElementById("user-info").innerHTML = user.user.email + ' UID ' + user.user.sub;
+                /*   tp.myaccount.show({
+                     containerSelector: "#myaccount-container",
+                     maxHeight: 500
+                   });*/
+            },
+            loggedOut: function(user) {
+                console.log('# logged out', user);
+                // document.location.reload();
+            },
+            cancelled: function(user) {
+                console.log('# cancelled');
+            },
+            customEvent: function(event, params) {
+                console.log('# custom event', event, params);
+            }
+        });
+
+           tp.myaccount.show({
+              containerSelector: "#myaccount-container",
+              maxHeight: 500
+            }); 
+
+       /* var sr = new URLSearchParams(window.location.search);
+        var reset_token =  sr.get("reset_token");
+        setTimeout(tp.pianoId.show({
+            'resetPasswordToken': reset_token
+        }), 5000);
+        offer();*/
+
+    }]);
+
+
+    function logout() {
+        tp.pianoId.logout();
+    }
+
+    function offer() {
+        var config = {
+            offerId: 'OF1WH82URJ1I',
+            containerSelector: "#myaccount-container",
+            displayMode: "inline"
+        };
+        tp.offer.show(config);
+    }
+    </script>
+    <script>
+    (function() {
+        var a = document.createElement("script");
+        a.type = "text/javascript";
+        a.async = true;
+        a.src = "https://sandbox.tinypass.com/api/libs/tinypass.js";
+        var b = document.getElementsByTagName("script")[0];
+        b.parentNode.insertBefore(a, b)
+    })();
+    </script>
+    <div>
+        <p>login will be there <span style="font-weight: bolder; color: green" id="user-info">Anonymous</span><a style="padding:0 5em;" href="#" onclick="logout();">logout</a></p>
+        <p>
+            <button onclick="offer()">show offer</button>
+        </p>
+        <div id="login_form" style="width: 360px; border: 1px solid red; font-size: 0;"></div>
+        <hr>
+    </div>
+    <p>You think water moves fast? You should see ice. It moves like it has a mind. Like it knows it killed the world once and got a taste for murder. After the avalanche, it took us a week to climb out. Now we took an oath, that I’m breaking now. We said we’d say it was the snow that killed the other two, but it wasn’t. Nature is lethal but it doesn’t hold a candle to man.</p>
+    <p>Ezekiel 25:17. "The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who attempt to poison and destroy my brothers. And you will know I am the Lord when I lay my vengeance upon you."</p>
+    <div id="myaccount-container"></div>
+</body>
+
+</html>
