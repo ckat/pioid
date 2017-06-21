@@ -16,7 +16,7 @@ document.getElementsByTagName("head")[0].appendChild(script);
 	tp = window['tp'] || [];
     tp.push(['setAid', "MODETWOAPP"]);
     tp.push(['setDebug', "true"]);
-    tp.push(['setEndpoint', "http://48478.dev.tinypass.com/api/v3"]);
+    tp.push(['setEndpoint', "https://48478.dev.tinypass.com/api/v3"]);
 tp.push(['setUsePianoIdUserProvider', true ]);
     tp.push(['init', function() {
 		var config = {
@@ -43,7 +43,7 @@ tp.push(['setUsePianoIdUserProvider', true ]);
         var a = document.createElement("script");
         a.type = "text/javascript";
         a.async = true;
-        a.src = "http://48478.dev.tinypass.com/api/tinypass.min.js";
+        a.src = "https://48478.dev.tinypass.com/api/tinypass.min.js";
         var b = document.getElementsByTagName("script")[0];
         b.parentNode.insertBefore(a, b)
     })();
