@@ -3,9 +3,9 @@
 <head>
     <script>
     tp = window['tp'] || [];
-    tp.push(['setAid', "BRLDrfVPzZ"]);
+    tp.push(['setAid', "Z4MBYRx5rw"]);
     tp.push(['setDebug', "true"]);
-    tp.push(['setEndpoint', "https://48293.dev.tinypass.com/api/v3"]);
+    tp.push(['setEndpoint', "https://buy.tinypass.com/api/v3"]);
     tp.push(['setUsePianoIdUserProvider', true]);
     tp.push(['init', function() {
         var config = {
@@ -20,7 +20,7 @@
         };
         tp.pianoId.init({
             disableSignUp: false,
-            iframeUrl: 'https://48293.dev.tinypass.com/',
+            iframeUrl: 'https://buy.tinypass.com/',
             displayMode: 'inline',
                         containerSelector: "#login",
             loggedIn: function(data) {
@@ -40,7 +40,7 @@
         var a = document.createElement("script");
         a.type = "text/javascript";
         a.async = true;
-        a.src = "https://48293.dev.tinypass.com/api/tinypass.min.js";
+        a.src = "https://buy.tinypass.com/api/tinypass.min.js";
         var b = document.getElementsByTagName("script")[0];
         b.parentNode.insertBefore(a, b)
     })();
