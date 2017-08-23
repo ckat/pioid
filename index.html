@@ -21,7 +21,8 @@
         tp.pianoId.init({
             disableSignUp: false,
             iframeUrl: 'https://48293.dev.tinypass.com/',
-            displayMode: 'modal',
+            displayMode: 'inline',
+                        containerSelector: "#login",
             loggedIn: function(data) {
                 tp.myaccount.show(myaccountConfig);
 
@@ -50,7 +51,9 @@
     <div style="margin-left: 200px; width: 1000px" id="lipsum">
         <a style="padding:0 5em;" href="#" onclick="tp.pianoId.logout();">Logout</a>
         <p>
-            <div id="for-offer"></div>
+            <div id="login"></div>
+
+        <div id="for-offer"></div>
             Quisque eget eros orci. In nibh ligula, varius sed fringilla sit amet, rutrum in nisi. Duis fringilla scelerisque egestas. Cras pharetra dignissim ligula vitae ornare. Etiam risus ex, fermentum condimentum dapibus at, gravida sed orci. Duis laoreet quis lorem at iaculis. Morbi et consectetur nunc. Maecenas rutrum dignissim imperdiet. Nullam orci orci, ullamcorper ac blandit id, egestas in ligula. Praesent sagittis dictum risus eget suscipit. Ut maximus ac orci non faucibus. Aliquam enim erat, posuere mollis nulla ac, consequat eleifend est. Praesent rutrum turpis at accumsan iaculis.
         </p>
 
