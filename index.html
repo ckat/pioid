@@ -3,9 +3,9 @@
 <head>
     <script>
     tp = window['tp'] || [];
-    tp.push(['setAid', "Z4MBYRx5rw"]);
+    tp.push(['setAid', "BRLDrfVPzZ"]);
     tp.push(['setDebug', "true"]);
-    tp.push(['setEndpoint', "https://buy.tinypass.com/api/v3"]);
+    tp.push(['setEndpoint', "https://48293.dev.tinypass.com/api/v3"]);
     tp.push(['setUsePianoIdUserProvider', true]);
     tp.push(['init', function() {
         var config = {
@@ -20,12 +20,11 @@
         };
         tp.pianoId.init({
             disableSignUp: false,
-            iframeUrl: 'https://buy.tinypass.com/',
+            iframeUrl: 'https://48293.dev.tinypass.com/',
             displayMode: 'inline',
                         containerSelector: "#login",
             loggedIn: function(data) {
                 tp.myaccount.show(myaccountConfig);
-
                 console.log('user ', data.user, ' logged in with token', data.token);
             },
             loggedOut: function() {
@@ -34,13 +33,12 @@
             }
         });
         tp.pianoId.show();
-
     }]);
     (function() {
         var a = document.createElement("script");
         a.type = "text/javascript";
         a.async = true;
-        a.src = "https://buy.tinypass.com/api/tinypass.min.js";
+        a.src = "https://48293.dev.tinypass.com/api/tinypass.min.js";
         var b = document.getElementsByTagName("script")[0];
         b.parentNode.insertBefore(a, b)
     })();
@@ -57,7 +55,7 @@
             Quisque eget eros orci. In nibh ligula, varius sed fringilla sit amet, rutrum in nisi. Duis fringilla scelerisque egestas. Cras pharetra dignissim ligula vitae ornare. Etiam risus ex, fermentum condimentum dapibus at, gravida sed orci. Duis laoreet quis lorem at iaculis. Morbi et consectetur nunc. Maecenas rutrum dignissim imperdiet. Nullam orci orci, ullamcorper ac blandit id, egestas in ligula. Praesent sagittis dictum risus eget suscipit. Ut maximus ac orci non faucibus. Aliquam enim erat, posuere mollis nulla ac, consequat eleifend est. Praesent rutrum turpis at accumsan iaculis.
         </p>
 
-        <div id="myaccount-container"></div>
+    <div id="myaccount-container"><H2>Here will be My Account</H2></div>
         <p>
             Etiam malesuada quam eget finibus feugiat. Praesent tempus erat sit amet justo dignissim, ut aliquet augue luctus. Suspendisse at ante ante. Aliquam rhoncus velit lectus, a lacinia leo rhoncus ac. Donec nec ante tristique, imperdiet nulla id, molestie nisi. Praesent ultricies ante eu lobortis interdum. Ut tincidunt egestas pulvinar. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis rutrum nunc sit amet erat dictum varius. Duis eu metus eros.
         </p>
