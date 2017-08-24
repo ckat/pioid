@@ -5,7 +5,7 @@
     tp = window['tp'] || [];
     tp.push(['setAid', "BRLDrfVPzZ"]);
     tp.push(['setDebug', "true"]);
-    tp.push(['setEndpoint', "https://48367.dev.tinypass.com/api/v3"]);
+    tp.push(['setEndpoint', "https://48119.dev.tinypass.com/api/v3"]);
     tp.push(['setUsePianoIdUserProvider', true]);
     tp.push(['init', function() {
         var config = {
@@ -20,8 +20,8 @@
         };
         tp.pianoId.init({
             disableSignUp: false,
-            iframeUrl: 'https://48367.dev.tinypass.com',
-            displayMode: 'inline',
+            iframeUrl: 'https://48119.dev.tinypass.com',
+            displayMode: 'modal',
                         containerSelector: "#login",
             loggedIn: function(data) {
                 tp.myaccount.show(myaccountConfig);
@@ -38,7 +38,7 @@
         var a = document.createElement("script");
         a.type = "text/javascript";
         a.async = true;
-        a.src = "https://48367.dev.tinypass.com/api/tinypass.min.js";
+        a.src = "https://48119.dev.tinypass.com/api/tinypass.min.js";
         var b = document.getElementsByTagName("script")[0];
         b.parentNode.insertBefore(a, b)
     })();
